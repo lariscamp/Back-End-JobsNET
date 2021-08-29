@@ -1,0 +1,117 @@
+{
+    "openapi": "3.0.0",
+    "info":{
+    "title": "API JobsNET",
+    "description": "Essa é a API do projeto de landing page de cadastro de candidatos(as) da JobsNET",
+    "version": "0.0.1"     
+},
+
+"servers":[
+    {
+        "url": "https://localhost.3000" ,
+        "description": "ambiente de desenvolvimento"
+    }
+],
+
+"paths": {
+    "/register": {
+      "post": {
+        "responses": {
+            "200": {
+              "description": "Cadastro realizado!"
+            },
+            "404": {
+              "description": "Not Found"
+            }
+          },
+        "summary": "Cadastro de candidato",
+        "description": "Rota de cadastro de usuário, recebe: nome, dataNascimento, estadoCivil, genero, cargo, email, celular, telFixo, end, bairro, cidade, CEP, RG, CPF, veiculo e CNH",
+        "tags": ["candidato"],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "properties": {
+                  "nome": {
+                    "type": "string"
+                  },
+                  "dataNascimento": {
+                    "type": "string"
+                  },
+                  "estadoCivil": {
+                    "type": "string"
+                  },
+                  "genero": {
+                    "type": "string"
+                  },
+                  "cargo": {
+                    "type": "string"
+                  },
+                  "email": {
+                    "type": "string"
+                  },
+                  "celular": {
+                    "type": "string"
+                  },
+                  "telFixo": {
+                    "type": "string"
+                  },
+                  "endereco": {
+                    "type": "string"
+                  },
+                  "bairro": {
+                    "type": "string"
+                  },
+                  "cidade": {
+                    "type": "string"
+                  },
+                  "estado": {
+                    "type": "string"
+                  },
+                  "CEP": {
+                    "type": "string"
+                  },
+                  "RG": {
+                    "type": "string"
+                  },
+                  "CPF": {
+                    "type": "string"
+                  },
+                  "veiculo": {
+                    "type": "boolean"
+                  },
+                  "cnh": {
+                    "type": "boolean"
+                  }
+                }
+              },
+              "examples": {
+                "Larissa": {
+                  "value": {
+                    "nome": "Larissa Campelo",
+                    "dataNascimento": "88/88/8888",
+                    "estadoCivil": "solteira",
+                    "gender": "Feminino",
+                    "cargo": "dev",
+                    "email": "larissacampeloalves@gmail.com",
+                    "celular": "88888888888",
+                    "telefoneFixo": "",
+                    "endereco": "rua 888 lote 888 numero 888",
+                    "bairro": "Brasília",
+                    "cidade": "Brasília",
+                    "estado": "Distrito Federal",
+                    "cep": "8888888",
+                    "RG": "8888888",
+                    "CPF": "88888888888",
+                    "veiculo": false,
+                    "cnh": true
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
