@@ -10,7 +10,19 @@ const port = 3000
 mongoose.connect ('mongodb+srv://larissacamp:BE9BF2FdHW8dtMRK@cluster0.pc8w5.mongodb.net/myFirstDatabase?retryWrites=true&w=majority', { 
 });
 
-app.use (cors())
+const corsOpts = {
+  origin: '*',
+
+  methods: [
+    'GET',
+    'POST',
+  ],
+
+  allowedHeaders: [
+    'Content-Type',
+  ],
+};
+app.use (cors(corsOpts))
 app.use(express.json ());
 app.use('/docs', swaggerUI.serve, swaggerUI.setup (swaggerDocs));
 app.use (routes);
