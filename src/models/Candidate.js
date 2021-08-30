@@ -8,7 +8,7 @@ const CandidateSchema = new mongoose.Schema({
     cargo: {type: String, unique: false, required: true},
     email:{type: String, unique: true, required: true},
     celular: {type: String, required: true},
-    telFixo: {type: String, required: false},
+    telefoneFixo: {type: String, required: false},
     endereco: {type: String, unique: false, required: true},
     bairro: {type: String, unique: false, required: true},
     cidade: {type: String, unique: false, required: true},
